@@ -93,7 +93,10 @@ macOS 会询问是否允许访问「文稿 / 桌面 / 下载」文件夹，点 *
 
 ## 从源码构建
 
-需要 Xcode Command Line Tools（`swiftc`）。首次构建先下载引擎（约 330 MB，只需一次，不需要 Node/npm）：
+需要 Swift 编译器（`swiftc`）。旧版 SDK 只需 Xcode Command Line Tools；
+macOS 15 之后 SwiftUI 的属性包装器改成了宏，只装 Command Line Tools 会报
+`external macro implementation type 'SwiftUIMacros.StateMacro' could not be found`，
+这时需要装完整 Xcode。首次构建先下载引擎（约 330 MB，只需一次，不需要 Node/npm）：
 
 ```bash
 ./fetch-engine.sh    # 从 npm 下载 @deepseek-ai/libreoffice-kit 预编译包到 vendor/

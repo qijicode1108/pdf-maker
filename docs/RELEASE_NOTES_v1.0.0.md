@@ -16,8 +16,8 @@ LibreOffice、Node.js 或 Office，装好即可离线使用。
 
 | 文件 | 大小 | SHA-256 |
 | --- | --- | --- |
-| 秒转 PDF（Apple Silicon）.zip | 65 MB | `f8d05d458539d9e60ab9569843f1bbd9103cf4f5314fafe4cfc8547ec8f9a813` |
-| 秒转 PDF（Intel）.zip | 67 MB | `d8ec372398819a1c8fb757b0a5040339ab202039d0daffe3172f249c8a1d71e7` |
+| 秒转 PDF（Apple Silicon）.zip | 65.2 MB | `055cc807851dcd6f7820fadb9dc8d3e5fcf979b23d20f45ccfbf4cf882b60afa` |
+| 秒转 PDF（Intel）.zip | 67.4 MB | `00db16d1061a7947a2d79808858ae2883a82782345d3e32d568fc0095d209e64` |
 
 ## 安装
 

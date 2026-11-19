@@ -77,7 +77,7 @@ assemble_app() {
     local engine_src="$VENDOR/engine-$engine_arch"
 
     [ -x "$engine_src/bin/dsoffice" ] || {
-        echo "缺少 $engine_arch 转换引擎：$engine_src（先运行 ./fetch-engine.sh）" >&2; exit 1; }
+        echo "缺少 $engine_arch 转换引擎：${engine_src}（先运行 ./fetch-engine.sh）" >&2; exit 1; }
 
     mkdir -p "$stage/Contents/MacOS" "$stage/Contents/Resources/engine"
 
@@ -100,9 +100,9 @@ assemble_app() {
     # 工作区在 iCloud/文稿目录里，文件会带上 provenance 等扩展属性，签名前要清掉。
     /usr/bin/xattr -cr "$stage" 2>/dev/null || true
     if /usr/bin/codesign --force --sign - "$stage" >/dev/null 2>&1; then
-        echo "    $engine_arch：ad-hoc 签名完成"
+        echo "    ${engine_arch}：ad-hoc 签名完成"
     else
-        echo "    警告（$engine_arch）：ad-hoc 签名失败（应用仍可在本机运行）"
+        echo "    警告（${engine_arch}）：ad-hoc 签名失败（应用仍可在本机运行）"
     fi
 }
 
@@ -111,8 +111,8 @@ make_package() {
     local engine_arch="$1"
     local label="$2"
     local app_src="$3"
-    local pkg="$DIST/安装包（$label）"
-    local zip="$DIST/秒转 PDF（$label）.zip"
+    local pkg="$DIST/安装包（${label}）"
+    local zip="$DIST/秒转 PDF（${label}）.zip"
 
     rm -rf "$pkg" "$zip"
     mkdir -p "$pkg"
@@ -138,7 +138,7 @@ for i in "${!arr_engine[@]}"; do
     engine_arch="${arr_engine[$i]}"
     label="${arr_label[$i]}"
     stage="$STAGE_ROOT/app-$engine_arch"
-    echo "  · $label（$engine_arch）"
+    echo "  · ${label}（${engine_arch}）"
     assemble_app "$engine_arch" "$stage"
     make_package "$engine_arch" "$label" "$stage"
     rm -rf "$stage"

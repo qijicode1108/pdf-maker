@@ -32,7 +32,7 @@ for arch in x64 arm64; do
     curl -fL --retry 3 --progress-bar "$url" | tar xzf - -C "$engine_dir" --strip-components=1
 
     [ -x "$engine_dir/bin/dsoffice" ] || {
-        echo "安装失败：缺少 bin/dsoffice（$arch）" >&2
+        echo "安装失败：缺少 bin/dsoffice（${arch}）" >&2
         exit 1
     }
     chmod +x "$engine_dir/bin/dsoffice"

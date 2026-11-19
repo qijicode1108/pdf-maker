@@ -11,7 +11,7 @@ case "$(uname -m)" in
     *)      LABEL="Intel" ;;
 esac
 
-PKG="${1:-$ROOT/dist/安装包（$LABEL）}"
+PKG="${1:-$ROOT/dist/安装包（${LABEL}）}"
 APP_SRC="$PKG/秒转 PDF.app"
 WF_SRC="$PKG/秒转 PDF.workflow"
 APP_DST="$HOME/Applications/秒转 PDF.app"
@@ -36,7 +36,7 @@ fi
 rm -f "$SUPPORT/daemon.pid" "$SUPPORT/daemon.sock"
 sleep 1
 
-echo "==> 安装应用（$LABEL）"
+echo "==> 安装应用（${LABEL}）"
 mkdir -p "$HOME/Applications" "$HOME/Library/Services"
 rm -rf "$APP_DST" "$WF_DST"
 /usr/bin/ditto "$APP_SRC" "$APP_DST"

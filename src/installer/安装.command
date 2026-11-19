@@ -28,7 +28,7 @@ case "$ARCH" in
     x86_64)  VARIANT="Intel";         NEED_ARCH="x86_64" ;;
     *)       VARIANT="$ARCH";         NEED_ARCH="" ;;
 esac
-echo "本机：$VARIANT（$ARCH）"
+echo "本机：${VARIANT}（${ARCH}）"
 echo "转换引擎已内置在应用里，不需要安装 DeepSeek Harness 或其他软件。"
 
 # 装错架构时提前拦住，否则转换时才失败，很难排查。
@@ -39,7 +39,7 @@ if [ -n "$NEED_ARCH" ] && [ -n "$ENGINE_ARCHS" ]; then
         *)
             echo
             echo "✗ 这个安装包不是给本机用的。"
-            echo "  本机是 $VARIANT（$ARCH），但安装包里的引擎是：$ENGINE_ARCHS"
+            echo "  本机是 ${VARIANT}（${ARCH}），但安装包里的引擎是：${ENGINE_ARCHS}"
             echo "  请下载对应版本：Apple Silicon 版 / Intel 版。"
             pause_exit
             exit 1
