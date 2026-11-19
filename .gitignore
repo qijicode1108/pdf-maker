@@ -1,0 +1,9 @@
+# 构建产物
+build/
+dist/
+
+# 内置引擎（用 ./fetch-engine.sh 重新下载）
+vendor/
+
+# macOS
+.DS_Store
