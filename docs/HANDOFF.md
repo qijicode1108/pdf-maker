@@ -19,9 +19,10 @@
 | Git 仓库 | ✅ 本地 `main`，3 个提交 |
 | **上传 GitHub / 发 Release** | ⏸ 等你的新 GitHub 账号 |
 
-旧的、依赖 DeepSeek Harness 的版本仍在 `pdf-quick/`，以及桌面
-`秒转 PDF 安装包/`、`秒转 PDF 安装包 2/`（两份相同，约 1.2 MB）。
-现在发布的是**独立版**。
+旧的、依赖 DeepSeek Harness 的版本仍在 `pdf-quick/`，安装包备份在
+`pdf-quick/dist/秒转 PDF 安装包.zip`（454 KB）。
+桌面原来那两个同名安装包文件夹（内容重复且已过时，误装会覆盖新版）
+已于 11-19 删除。现在发布的是**独立版**。
 
 ---
 
