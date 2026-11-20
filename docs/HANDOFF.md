@@ -1,8 +1,7 @@
 # 秒转 PDF · 换机交接与进度整理
 
-> 更新时间：2026-11-19 11:30（新机 macOS 27 / Apple Silicon / arm64）
-> 结论：**源码和两套安装包都在，进度没丢；已装到这台 Mac 并实测通过。**
-> 只剩「上传 GitHub」——你准备建新账号，先跳过。
+> 更新时间：2026-11-20 13:10（新机 macOS 27 / Apple Silicon / arm64）
+> 结论：**源码、两套安装包、GitHub 仓库与 v1.0.0 Release 全部就位；已装到这台 Mac 并实测通过。**
 
 ---
 
@@ -16,8 +15,8 @@
 | 体积缩小（去掉 Node.js 运行时） | ✅ 应用 157–165 MB |
 | 本机安装 + 真实转换 | ✅ 11-19 已装到 `~/Applications`，Word / 图片均转换成功 |
 | 安装脚本在 macOS bash 3.2 下的崩溃 | ✅ 已修，并重新打包 |
-| Git 仓库 | ✅ 本地 `main`，3 个提交 |
-| **上传 GitHub / 发 Release** | ⏸ 等你的新 GitHub 账号 |
+| Git 仓库 | ✅ 本地 `main` 与 GitHub 一致 |
+| **GitHub 仓库 + v1.0.0 Release** | ✅ <https://github.com/qijicode1108/pdf-quick> |
 
 旧的、依赖 DeepSeek Harness 的版本仍在 `pdf-quick/`，安装包备份在
 `pdf-quick/dist/秒转 PDF 安装包.zip`（454 KB）。
@@ -130,26 +129,47 @@ pdf-quick-standalone/
 
 ---
 
-## 6. 下一步：GitHub（等你账号）
+## 6. GitHub 已发布（2026-11-20）
 
-你选的是「装 gh CLI + 浏览器授权一次，我自动建仓 / 发 Release」。
-建好账号后告诉我用户名，我按下面做：
+- 仓库：<https://github.com/qijicode1108/pdf-quick>
+- Release：<https://github.com/qijicode1108/pdf-quick/releases/tag/v1.0.0>
+- 资源（GitHub 会清理中文文件名，所以用了 ASCII 名）：
+  - `pdf-quick-1.0.0-macos-arm64.zip` · 65.2 MB · `055cc807…`
+  - `pdf-quick-1.0.0-macos-x64.zip` · 67.4 MB · `00db16d1…`
+- README 已重写，About 里填了描述、主页和 topics
+  （macos / pdf / swiftui / libreoffice / offline …）。
 
-```bash
-# 1. 下载 gh 到工作区并登录（你只需在浏览器输入一次设备码）
-gh auth login --hostname github.com --git-protocol https --web
+直接给别人下载的链接：
 
-# 2. 建仓库并推送（源码约 2 MB）
-gh repo create pdf-quick --public --source=. --remote=origin --push
-
-# 3. 发 v1.0.0 Release，上传两个 zip
-gh release create v1.0.0 "dist/秒转 PDF（Apple Silicon）.zip" "dist/秒转 PDF（Intel）.zip" \
-  --title "秒转 PDF v1.0.0" --notes-file docs/RELEASE_NOTES_v1.0.0.md
-
-# 4. 把 README「下载哪个版本」表格换成 Release 链接
+```
+https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-arm64.zip
+https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-x64.zip
 ```
 
-发布说明已写好：`docs/RELEASE_NOTES_v1.0.0.md`（含校验和、安装步骤、已知情况）。
+发下一个版本的流程：
+
+```bash
+./build.sh                                   # 重新构建（需要完整 Xcode，见 4.3）
+ln -f "dist/秒转 PDF（Apple Silicon）.zip" dist/upload/pdf-quick-1.0.1-macos-arm64.zip
+ln -f "dist/秒转 PDF（Intel）.zip"         dist/upload/pdf-quick-1.0.1-macos-x64.zip
+git push
+gh release create v1.0.1 dist/upload/*.zip --title "秒转 PDF v1.0.1" \
+  --notes-file docs/RELEASE_NOTES_v1.0.1.md
+```
+
+### 这台机器的网络坑
+
+`github.com` 的 DNS 被污染到 `20.205.243.166`（不通），但 `api.github.com`、
+`uploads.github.com` 和 GitHub 的其他边缘 IP 正常。发布时先起本地代理：
+
+```bash
+python3 .tools/connect_proxy.py &        # 监听 127.0.0.1:8899
+export HTTPS_PROXY=http://127.0.0.1:8899
+export NO_PROXY=api.github.com,uploads.github.com,objects.githubusercontent.com,codeload.github.com
+```
+
+`gh` 的登录令牌在 `.tools/ghconfig/hosts.yml`（明文，仅本机；不要提交、不要外传）。
+代理脚本只固定 `github.com` 这个域名，TLS 仍是端到端的。
 
 ---
 
@@ -170,8 +190,11 @@ shasum -a 256 dist/*.zip
 ## 8. 注意
 
 - **写 shell 时变量后面紧跟中文必须用 `${VAR}`**，否则 bash 3.2 会解析错（见 4.2）。
+- **Release 附件名要用 ASCII**：GitHub 会把 `秒转 PDF（Intel）.zip` 清理成
+  `PDF.Intel.zip`，README 里的链接就对不上了。发布前先 `ln` 一个 ASCII 名的硬链接。
+- 国内网络下 `github.com` 可能被 DNS 污染，发布前先起 `.tools/connect_proxy.py`（见第 6 节）。
 - `dist/`、`vendor/`、`build/` 已在 `.gitignore`，不要提交。
 - GitHub Release 单附件上限 2 GB，两个包共约 133 MB，没问题。
 - 应用是 ad-hoc 签名，首次打开需右键 →「打开」，属正常现象。
-- 本地 git 作者信息暂用旧机的 `shicode <qijihku@163.com>`；
+- 本地 git 作者信息沿用旧机的 `shicode <qijihku@163.com>`；
   要改的话在推送前 `git commit --amend --reset-author`。
