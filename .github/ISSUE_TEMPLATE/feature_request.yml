@@ -1,0 +1,50 @@
+name: 功能建议
+description: 希望它支持更多格式、更好用的操作，或者只是有个想法
+title: "[建议] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提建议。说清楚「你原来怎么做、卡在哪」比只说「希望支持 X」更有用。
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 涉及哪一部分？
+      options:
+        - 支持更多文件格式
+        - 右键 / 快速操作
+        - 转换设置（页面、图片质量、覆盖规则等）
+        - 窗口界面
+        - 速度与体积
+        - 安装与分发
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你现在遇到的麻烦
+      description: 现在的做法是什么，哪里不顺手
+      placeholder: 例如：我经常要转 .pages，现在只能先导出成 docx 再转。
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你希望它怎么工作
+      description: 具体到「点哪里、发生什么」最好
+      placeholder: 例如：右键菜单里能直接处理 .pages，或者拖进窗口时自动提示先导出。
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 你试过的替代方案
+      description: 可选。比如别的工具、别的系统功能
+    validations:
+      required: false

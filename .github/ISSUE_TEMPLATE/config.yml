@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 下载最新版本
+    url: https://github.com/qijicode1108/pdf-maker/releases/latest
+    about: 反馈问题前，请先确认装的是最新版本。
+  - name: 安装说明与常见问题
+    url: https://github.com/qijicode1108/pdf-maker#常见问题
+    about: 右键菜单没有、权限弹窗、转换慢等问题，README 里大多已经有答案。

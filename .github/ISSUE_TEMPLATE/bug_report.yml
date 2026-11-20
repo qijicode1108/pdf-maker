@@ -1,0 +1,101 @@
+name: 转换失败 / 使用问题
+description: 转不出来、右键没菜单、卡住、PDF 排版不对……按这个填，最快定位
+title: "[问题] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。尽量把下面填全，尤其是**转换日志**——没有日志我只能猜。
+
+        > 请不要上传合同、报价单等敏感文件。
+        > 需要样例时，新建一个内容无关的文档复现即可。
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 卡在哪一步？
+      options:
+        - 安装时就失败了
+        - 装好了，但右键菜单里没有「秒转 PDF」
+        - 拖进窗口 / 右键之后没有任何反应
+        - 开始转换了，但最后失败
+        - 一直卡在「正在生成 PDF…」
+        - PDF 生成成功，但内容或排版不对
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: chip
+    attributes:
+      label: 这台 Mac 的芯片
+      description: 左上角  →「关于本机」→ 看「芯片」一行
+      options:
+        - Apple Silicon（M1 / M2 / M3 / M4…）
+        - Intel
+        - 不确定
+    validations:
+      required: true
+
+  - type: input
+    id: macos
+    attributes:
+      label: macOS 版本
+      placeholder: 例如 macOS 15.2 / macOS 26.1
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 秒转 PDF 版本
+      description: 应用窗口里，或 Release 页面上的版本号
+      placeholder: 例如 v1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: files
+    attributes:
+      label: 文件格式、大小、数量
+      description: 越具体越好；一次转多个文件也请说明
+      placeholder: 例如 .docx，3.2 MB，40 页；一次选了 5 个文件
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 具体现象
+      description: 你做了什么、看到什么、期望什么
+      placeholder: |
+        1. 在 Finder 里选中 报告.docx
+        2. 右键 → 快速操作 → 秒转 PDF
+        3. 窗口里显示「失败：…」，没有生成 PDF
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: 转换日志
+      description: 打开应用右下角齿轮 →「打开转换日志」，把内容原样贴进来
+      render: shell
+      placeholder: 2026-11-20 13:00:00 [info] ...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tried
+    attributes:
+      label: 已经试过
+      options:
+        - label: 重新运行过安装包里的「安装.command」
+        - label: 系统设置 → 隐私与安全性里允许了「秒转 PDF」访问文件夹
+        - label: 注销并重新登录过一次（右键菜单相关）
+        - label: 确认用的是最新版本
