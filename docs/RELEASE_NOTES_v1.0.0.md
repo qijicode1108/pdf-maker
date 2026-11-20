@@ -30,11 +30,13 @@ LibreOffice、Node.js 或 Office，装好即可离线使用。
 装好后：
 
 - 应用：`~/Applications/秒转 PDF.app`
-- 右键快速操作：`~/Library/Services/秒转 PDF.workflow`
+- 右键**快速操作**：`~/Library/Services/秒转 PDF.workflow`
+  —— 安装脚本会自动把它注册到 Finder 右键菜单，装完直接就能用。
 
 ## 怎么用
 
-- **右键**：Finder 里选中文件（可多选，也可选文件夹）→ 快速操作 → 秒转 PDF。
+- **右键（新增的菜单项）**：在 Finder 里选中文件（可多选，也可选整个文件夹）
+  → 右键 → **快速操作** → **秒转 PDF**，不用打开应用，PDF 直接生成。
 - **拖窗口**：打开「秒转 PDF」，把文件拖进虚线框。
 - **拖 Dock 图标**：效果同右键。
 
