@@ -132,7 +132,9 @@ pdf-quick-standalone/
 ## 6. GitHub 已发布（2026-11-20）
 
 - 仓库：<https://github.com/qijicode1108/pdf-maker>
+  （原名 `pdf-quick`，改名后旧地址会自动 301）
 - Release：<https://github.com/qijicode1108/pdf-maker/releases/tag/v1.0.0>
+- About 明确写了「macOS 专用（macOS 13+，Apple Silicon / Intel），没有 Windows / Linux 版」
 - 资源（GitHub 会清理中文文件名，所以用了 ASCII 名）：
   - `pdf-maker-1.0.0-macos-arm64.zip` · 65.2 MB · `055cc807…`
   - `pdf-maker-1.0.0-macos-x64.zip` · 67.4 MB · `00db16d1…`
