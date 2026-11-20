@@ -16,7 +16,7 @@
 | 本机安装 + 真实转换 | ✅ 11-19 已装到 `~/Applications`，Word / 图片均转换成功 |
 | 安装脚本在 macOS bash 3.2 下的崩溃 | ✅ 已修，并重新打包 |
 | Git 仓库 | ✅ 本地 `main` 与 GitHub 一致 |
-| **GitHub 仓库 + v1.0.0 Release** | ✅ <https://github.com/qijicode1108/pdf-quick> |
+| **GitHub 仓库 + v1.0.0 Release** | ✅ <https://github.com/qijicode1108/pdf-maker> |
 
 旧的、依赖 DeepSeek Harness 的版本仍在 `pdf-quick/`，安装包备份在
 `pdf-quick/dist/秒转 PDF 安装包.zip`（454 KB）。
@@ -131,27 +131,27 @@ pdf-quick-standalone/
 
 ## 6. GitHub 已发布（2026-11-20）
 
-- 仓库：<https://github.com/qijicode1108/pdf-quick>
-- Release：<https://github.com/qijicode1108/pdf-quick/releases/tag/v1.0.0>
+- 仓库：<https://github.com/qijicode1108/pdf-maker>
+- Release：<https://github.com/qijicode1108/pdf-maker/releases/tag/v1.0.0>
 - 资源（GitHub 会清理中文文件名，所以用了 ASCII 名）：
-  - `pdf-quick-1.0.0-macos-arm64.zip` · 65.2 MB · `055cc807…`
-  - `pdf-quick-1.0.0-macos-x64.zip` · 67.4 MB · `00db16d1…`
+  - `pdf-maker-1.0.0-macos-arm64.zip` · 65.2 MB · `055cc807…`
+  - `pdf-maker-1.0.0-macos-x64.zip` · 67.4 MB · `00db16d1…`
 - README 已重写，About 里填了描述、主页和 topics
   （macos / pdf / swiftui / libreoffice / offline …）。
 
 直接给别人下载的链接：
 
 ```
-https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-arm64.zip
-https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-x64.zip
+https://github.com/qijicode1108/pdf-maker/releases/latest/download/pdf-maker-1.0.0-macos-arm64.zip
+https://github.com/qijicode1108/pdf-maker/releases/latest/download/pdf-maker-1.0.0-macos-x64.zip
 ```
 
 发下一个版本的流程：
 
 ```bash
 ./build.sh                                   # 重新构建（需要完整 Xcode，见 4.3）
-ln -f "dist/秒转 PDF（Apple Silicon）.zip" dist/upload/pdf-quick-1.0.1-macos-arm64.zip
-ln -f "dist/秒转 PDF（Intel）.zip"         dist/upload/pdf-quick-1.0.1-macos-x64.zip
+ln -f "dist/秒转 PDF（Apple Silicon）.zip" dist/upload/pdf-maker-1.0.1-macos-arm64.zip
+ln -f "dist/秒转 PDF（Intel）.zip"         dist/upload/pdf-maker-1.0.1-macos-x64.zip
 git push
 gh release create v1.0.1 dist/upload/*.zip --title "秒转 PDF v1.0.1" \
   --notes-file docs/RELEASE_NOTES_v1.0.1.md

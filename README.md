@@ -8,8 +8,10 @@
 
 <p align="center">把「转个 PDF」从三分钟，变成三秒。</p>
 
+<p align="center"><b>仅支持 macOS 13 及以上</b>（Apple Silicon / Intel）· 没有 Windows / Linux 版</p>
+
 <p align="center">
-  <a href="https://github.com/qijicode1108/pdf-quick/releases/latest"><img alt="release" src="https://img.shields.io/github/v/release/qijicode1108/pdf-quick?color=2f6fed"></a>
+  <a href="https://github.com/qijicode1108/pdf-maker/releases/latest"><img alt="release" src="https://img.shields.io/github/v/release/qijicode1108/pdf-maker?color=2f6fed"></a>
   <img alt="macOS 13+" src="https://img.shields.io/badge/macOS-13%2B-black?logo=apple">
   <img alt="universal" src="https://img.shields.io/badge/Apple%20Silicon%20%7C%20Intel-universal-2f6fed">
   <img alt="offline" src="https://img.shields.io/badge/100%25-离线-21a366">
@@ -93,8 +95,8 @@ PDF 就出现在原文件旁边，Word 根本没被打开过。
 
 | 你的 Mac | 下载 |
 | --- | --- |
-| Apple Silicon（M1 / M2 / M3 / M4） | **[秒转 PDF（Apple Silicon）](https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-arm64.zip)** |
-| Intel 芯片 | **[秒转 PDF（Intel）](https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-x64.zip)** |
+| Apple Silicon（M1 / M2 / M3 / M4） | **[秒转 PDF（Apple Silicon）](https://github.com/qijicode1108/pdf-maker/releases/latest/download/pdf-maker-1.0.0-macos-arm64.zip)** |
+| Intel 芯片 | **[秒转 PDF（Intel）](https://github.com/qijicode1108/pdf-maker/releases/latest/download/pdf-maker-1.0.0-macos-x64.zip)** |
 
 不确定的话：左上角  →「关于本机」，看「芯片」那一行。
 
@@ -245,7 +247,7 @@ anything.
 - Batch queue, auto-numbering, offline, read-only on your originals.
 - Universal binary: Apple Silicon + Intel, macOS 13+.
 
-Download the right build from [Releases](https://github.com/qijicode1108/pdf-quick/releases/latest),
+Download the right build from [Releases](https://github.com/qijicode1108/pdf-maker/releases/latest),
 unzip, right-click `安装.command` → Open.
 
 </details>

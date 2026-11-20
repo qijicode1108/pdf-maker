@@ -10,7 +10,7 @@ git init
 git add .
 git commit -m "秒转 PDF：自带转换引擎的独立版"
 git branch -M main
-git remote add origin git@github.com:<你的账号>/pdf-quick.git
+git remote add origin git@github.com:<你的账号>/pdf-maker.git
 git push -u origin main
 ```
 
@@ -68,7 +68,7 @@ xcrun stapler staple "秒转 PDF.app"
 有 Homebrew Tap 的话，用户可以用：
 
 ```bash
-brew install --cask <你的tap>/pdf-quick
+brew install --cask <你的tap>/pdf-maker
 ```
 
 Cask 里指向 Release 的 zip，用 `sha256` 固定版本校验。
