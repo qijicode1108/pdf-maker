@@ -93,8 +93,8 @@ PDF 就出现在原文件旁边，Word 根本没被打开过。
 
 | 你的 Mac | 下载 |
 | --- | --- |
-| Apple Silicon（M1 / M2 / M3 / M4） | **[秒转 PDF（Apple Silicon）](https://github.com/qijicode1108/pdf-quick/releases/latest/download/%E7%A7%92%E8%BD%AC%20PDF%EF%BC%88Apple%20Silicon%EF%BC%89.zip)** |
-| Intel 芯片 | **[秒转 PDF（Intel）](https://github.com/qijicode1108/pdf-quick/releases/latest/download/%E7%A7%92%E8%BD%AC%20PDF%EF%BC%88Intel%EF%BC%89.zip)** |
+| Apple Silicon（M1 / M2 / M3 / M4） | **[秒转 PDF（Apple Silicon）](https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-arm64.zip)** |
+| Intel 芯片 | **[秒转 PDF（Intel）](https://github.com/qijicode1108/pdf-quick/releases/latest/download/pdf-quick-1.0.0-macos-x64.zip)** |
 
 不确定的话：左上角  →「关于本机」，看「芯片」那一行。
 

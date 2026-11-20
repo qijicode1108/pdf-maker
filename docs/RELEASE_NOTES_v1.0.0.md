@@ -9,15 +9,15 @@ LibreOffice、Node.js 或 Office，装好即可离线使用。
 
 | 你的 Mac | 文件 |
 | --- | --- |
-| Apple Silicon（M1 / M2 / M3 / M4） | `秒转 PDF（Apple Silicon）.zip` |
-| Intel 芯片 | `秒转 PDF（Intel）.zip` |
+| Apple Silicon（M1 / M2 / M3 / M4） | `pdf-quick-1.0.0-macos-arm64.zip` |
+| Intel 芯片 | `pdf-quick-1.0.0-macos-x64.zip` |
 
 在   →「关于本机」里可以看到芯片型号。
 
 | 文件 | 大小 | SHA-256 |
 | --- | --- | --- |
-| 秒转 PDF（Apple Silicon）.zip | 65.2 MB | `055cc807851dcd6f7820fadb9dc8d3e5fcf979b23d20f45ccfbf4cf882b60afa` |
-| 秒转 PDF（Intel）.zip | 67.4 MB | `00db16d1061a7947a2d79808858ae2883a82782345d3e32d568fc0095d209e64` |
+| pdf-quick-1.0.0-macos-arm64.zip | 65.2 MB | `055cc807851dcd6f7820fadb9dc8d3e5fcf979b23d20f45ccfbf4cf882b60afa` |
+| pdf-quick-1.0.0-macos-x64.zip | 67.4 MB | `00db16d1061a7947a2d79808858ae2883a82782345d3e32d568fc0095d209e64` |
 
 ## 安装
 
